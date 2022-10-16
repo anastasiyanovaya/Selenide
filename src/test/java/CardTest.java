@@ -11,18 +11,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CardTest {
 
-   @Test
+    @Test
     void testDelivery() {
-       Configuration.holdBrowserOpen=true;
-       open("http://localhost:9999/");
-       $("input[placeholder=\"Город\"]").setValue("Ханты-Мансийск");
-       $("[placeholder=\"Дата встречи\"]").setValue("19.10.2022");
-      $("[name=\"name\"]").setValue("Иванов-Петров Вадим");
-       $("[name=\"phone\"]").setValue("+79279999999");
-       $("[data-test-id=\"agreement\"]").click();
-       $x("//span[text()=\"Забронировать\"]").click();
-       $("[data-test-id=\"notification\"]").should(visible, Duration.ofSeconds(15));
+        Configuration.holdBrowserOpen = true;
+        open("http://localhost:9999/");
+        $("input[placeholder=\"Город\"]").setValue("Ханты-Мансийск");
+        $("[placeholder=\"Дата встречи\"]").setValue("19.10.2022");
+        $("[name=\"name\"]").setValue("Иванов-Петров Вадим");
+        $("[name=\"phone\"]").setValue("+79279999999");
+        $("[data-test-id=\"agreement\"]").click();
+        $x("//span[text()=\"Забронировать\"]").click();
+        $("[data-test-id=\"notification\"]").should(visible, Duration.ofSeconds(15));
 
 
-   }
+    }
 }
